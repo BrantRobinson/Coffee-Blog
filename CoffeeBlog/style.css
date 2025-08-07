@@ -1,11 +1,148 @@
-. {
-    box-sizing: border-box;
+/* GLOBAL */
+:root {
+    --fw-b: 300;
+    --fw-n: 200;
+    --fw-l: 100;
+
+    --fs-l: 3rem;
+    --fs-m: 2rem;
+    --fs-s: 1rem;
 }
 
-header {
-    /* background-image: url("images/header-bkg.png"); */
+* {
+    margin: 0;
+    padding: 0;
 }
 
-.blog_item img {
-    max-width: 300px;
+h1, h2, h3 {
+    margin: 1em 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+p {
+    font-weight: var(--fw-l);
+    font-size: var(--fs-s);
+    margin-bottom: 1em;
+}
+
+.main-header {
+    background-image: url("./img/banner.jpg");
+    background-size: cover;
+    height: 20em;
+    padding: 1em;
+    color: white;
+    text-align: center;
+}
+
+/* BLOG SECTION */
+.blog-content {
+    padding: 0 2em 2em 2em;
+    display: grid;
+    grid-template-areas: 
+    'top'
+    'one'
+    'two' 
+    'three';
+    gap: 2em;
+}
+
+.blog-content img {
+    width: 70%;
+}
+
+.blog-item1, .blog-item2, .blog-item3 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3em;
+}
+
+.blog-button {
+    padding: .5em 2em;
+    background-image: linear-gradient(to right, rgb(0, 0, 0), rgb(68, 68, 68));
+    text-decoration: none;
+    color: white;
+    width: fit-content;
+    border-radius: 100px;
+    justify-self: center;
+    text-transform: uppercase;
+    margin-top: auto;
+}
+
+.blog-button:hover {
+    color: black;
+    background-color: grey;
+    background-image: none;
+}
+
+.blog-heading {
+    grid-area: top;
+}
+
+.blog-item1 {
+    grid-area: one;
+}
+
+.blog-item2 {
+    grid-area: two;
+}
+
+.blog-item3 {
+    grid-area: three;
+}
+
+@media (min-width: 800px) {
+    .blog-content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+        '. top .'
+        'one two three';
+        gap: 2em;
+    }
+
+    .blog-heading h2 {
+    text-align: center;
+    }
+    .blog-item1, .blog-item2, .blog-item3 {
+        margin-bottom: 0em;
+
+    }
+}
+
+/* COURSES SECTION */
+.courses-item {
+    padding: 0 0 2em 0;
+}
+
+.courses-button {
+    padding: .5em 2em;
+    background-image: linear-gradient(to right, rgb(116, 90, 90), rgb(63, 45, 45));
+    text-decoration: none;
+    color: white;
+    width: fit-content;
+    border-radius: 100px;
+    justify-self: center;
+    text-transform: uppercase;
+    margin-top: auto;
+}
+
+.courses-button:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(26, 12, 12);
+    background-image: none;
+}
+
+.footer-content {
+    background-color: black;
+    color: white;
+    margin: 0 auto;
+    padding: 1em 0;
+    text-align: center;
+}
+
+.footer-links-item {
+    padding: 0 1em;
 }
