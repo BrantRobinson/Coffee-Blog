@@ -1,0 +1,11 @@
+. {
+    box-sizing: border-box;
+}
+
+header {
+    /* background-image: url("images/header-bkg.png"); */
+}
+
+.blog_item img {
+    max-width: 300px;
+}
